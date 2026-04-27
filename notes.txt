@@ -1,0 +1,519 @@
+VIVA VOICE PREPARATION
+Complete Q&A for All 7 Labs
+NLP & Social Media Analysis
+140 Questions & Answers | Theory | FAQS
+
+--------------------------------------------------------------------------------
+LAB 1: Text Preprocessing - Tokenization, Filtration & Script Validation
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+Text preprocessing transforms raw text into a clean, structured format. Key techniques include Tokenization (splitting text into tokens), Filtration (removing noise/unwanted characters), and Script Validation (ensuring text belongs to the expected language script). Python's NLTK library is used with tools like Punkt (sentence tokenizer) and WordNet (lexical database).
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is NLP?
+A: Natural Language Processing (NLP) is a branch of AI that enables computers to understand, interpret, and generate human language.
+
+Q2: What is text preprocessing?
+A: Text preprocessing is the process of cleaning and transforming raw text into a format suitable for NLP tasks. It includes tokenization, filtration, stemming, lemmatization, etc.
+
+Q3: What is Tokenization?
+A: Tokenization is the process of splitting text into smaller units called tokens (words, sentences, or subwords). E.g., 'I love NLP' -> ['I', 'love', 'NLP'].
+
+Q4: What is Filtration in text preprocessing?
+A: Filtration is the removal of unwanted characters, symbols, punctuation, or noise from text data to improve analysis quality.
+
+Q5: What is Script Validation?
+A: Script Validation ensures that the text contains valid characters and is in the expected language/script, filtering out invalid or foreign scripts.
+
+Q6: What is NLTK?
+A: NLTK (Natural Language Toolkit) is a Python library used for text processing tasks like tokenization, POS tagging, stemming, and more.
+
+Q7: What is Punkt?
+A: Punkt is an unsupervised sentence tokenizer in NLTK that uses machine learning to split text into sentences.
+
+Q8: What is WordNet?
+A: WordNet is a lexical database for English that groups words into sets of synonyms (synsets) and stores relationships between them.
+
+Q9: Why is text preprocessing important?
+A: Raw text contains noise, irrelevant data, and inconsistencies. Preprocessing improves model accuracy, reduces dimensionality, and makes data suitable for analysis.
+
+Q10: What are the steps in text preprocessing?
+A: 1. Tokenization, 2. Lowercasing, 3. Removing punctuation, 4. Stop word removal, 5. Stemming/Lemmatization, 6. Script validation.
+
+Q11: What is the difference between word tokenization and sentence tokenization?
+A: Word tokenization splits text into individual words; sentence tokenization splits text into individual sentences.
+
+Q12: What does word_tokenize() do in NLTK?
+A: It splits a string into a list of word tokens using Punkt tokenizer, handling punctuation and special cases intelligently.
+
+Q13: What is sent_tokenize() in NLTK?
+A: sent_tokenize() splits a paragraph into a list of individual sentences.
+
+Q14: What is noise in text data?
+A: Noise refers to irrelevant data like HTML tags, special characters, extra whitespace, numbers, or other elements that don't contribute to meaning.
+
+Q15: How does script validation help in multilingual NLP?
+A: It filters out tokens that don't belong to the target language's script, ensuring only valid language-specific characters are processed.
+
+Q16: What is the output of tokenization?
+A: A list of tokens (words or sentences) extracted from the input text.
+
+Q17: Can tokenization be language-specific?
+A: Yes. Different languages have different rules for tokenization. E.g., Chinese doesn't use spaces, so character-level tokenization is used.
+
+Q18: What is the isalpha() method used for?
+A: isalpha() checks if a string contains only alphabetic characters, used in filtration to remove numbers and special characters.
+
+Q19: What are synsets in WordNet?
+A: Synsets are groups of synonymous words sharing the same meaning. E.g., synsets for 'car' include 'automobile', 'motorcar'.
+
+Q20: Name some practical applications of text preprocessing.
+A: Search engines, spam detection, machine translation, chatbots, sentiment analysis, and document classification.
+
+
+--------------------------------------------------------------------------------
+LAB 2: Stop Word Removal, Lemmatization & Stemming
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+After tokenization, stop words (common words like 'the', 'is') are removed to reduce noise. Stemming (PorterStemmer) chops suffixes to get root forms - fast but may produce non-words. Lemmatization (WordNetLemmatizer + OMW) uses vocabulary knowledge to return valid dictionary base forms. Lemmatization is linguistically accurate; stemming is computationally faster.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is Stop Word Removal?
+A: Stop word removal is the process of eliminating common words like 'is', 'the', 'and', 'a' that carry little meaning and add noise to NLP analysis.
+
+Q2: Why are stop words removed?
+A: Stop words appear frequently but carry little semantic value. Removing them reduces data size, improves processing speed, and enhances model accuracy.
+
+Q3: What is Stemming?
+A: Stemming reduces words to their root/base form by removing suffixes. E.g., 'running' -> 'run', 'happiness' -> 'happi'. It is rule-based and may not produce real words.
+
+Q4: What is Lemmatization?
+A: Lemmatization reduces a word to its dictionary base form (lemma) using vocabulary and morphological analysis. E.g., 'running' -> 'run', 'better' -> 'good'.
+
+Q5: What is the difference between Stemming and Lemmatization?
+A: Stemming is faster, rule-based, and may produce non-real words. Lemmatization is slower, uses a vocabulary, and always produces valid words with linguistic accuracy.
+
+Q6: What is PorterStemmer?
+A: PorterStemmer is an algorithm in NLTK that removes common English suffixes to reduce words to their stem. E.g., 'studies' -> 'studi'.
+
+Q7: What is WordNetLemmatizer?
+A: WordNetLemmatizer uses the WordNet lexical database to find the base form of a word. It requires a POS tag for accurate results.
+
+Q8: What is OMW (Open Multilingual Wordnet)?
+A: OMW is an extension of WordNet that supports multiple languages, enabling lemmatization and semantic analysis across different languages.
+
+Q9: When should you prefer Lemmatization over Stemming?
+A: Lemmatization is preferred when linguistic accuracy is important (e.g., chatbots, machine translation) because it always returns valid words.
+
+Q10: When is Stemming preferred?
+A: Stemming is preferred in information retrieval tasks where speed matters more than linguistic accuracy, such as search indexing.
+
+Q11: What is a corpus in NLP?
+A: A corpus is a large and structured collection of text used for training or evaluating NLP models.
+
+Q12: What does the NLTK stopwords corpus contain?
+A: It contains a list of common words (stopwords) for multiple languages that are typically removed during preprocessing.
+
+Q13: What is linguistic knowledge in NLP?
+A: Linguistic knowledge refers to understanding of grammar, morphology, syntax, and semantics used to process and analyze language more accurately.
+
+Q14: Where is linguistic knowledge applied in Stemming vs Lemmatization?
+A: Stemming uses minimal linguistic knowledge (just suffix rules). Lemmatization uses rich linguistic knowledge (vocabulary, morphology, POS tags).
+
+Q15: What algorithm is used in PorterStemmer?
+A: The Porter algorithm (1980) is a 5-step suffix-stripping algorithm that applies a series of rules to reduce words to their stem.
+
+Q16: What is a POS tag and why is it needed in Lemmatization?
+A: POS (Part of Speech) tag identifies whether a word is a noun, verb, adjective, etc. Lemmatization uses POS to find the correct base form.
+
+Q17: Give an example of Stemming producing a non-real word.
+A: PorterStemmer: 'happiness' -> 'happi', 'studies' -> 'studi'. These are not valid English words.
+
+Q18: Give an example of Lemmatization.
+A: WordNetLemmatizer: 'better' -> 'good' (adj), 'running' -> 'run' (verb), 'geese' -> 'goose' (noun).
+
+Q19: What is the role of morphological analysis in Lemmatization?
+A: Morphological analysis studies word structure (prefix, root, suffix) to determine how a word is formed and find its base form accurately.
+
+Q20: Can the same word be stemmed/lemmatized differently based on context?
+A: Yes. E.g., 'saw' (noun: cutting tool) -> lemma 'saw', but 'saw' (verb: past of see) -> lemma 'see'. Context via POS determines the correct lemma.
+
+
+--------------------------------------------------------------------------------
+LAB 3: Text Similarity - TF-IDF, Cosine, Jaccard & BERT
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+Text similarity measures how alike two texts are. TF-IDF vectorizes text by weighing rare words higher. Cosine similarity computes the angle between document vectors. Jaccard measures set overlap. BERT (deep learning transformer) provides semantic embeddings that capture meaning beyond surface words, enabling true semantic similarity computation.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is text similarity?
+A: Text similarity is a measure of how alike two pieces of text are in terms of their content, meaning, or structure. It is used in duplicate detection, plagiarism checking, and search engines.
+
+Q2: What is TF-IDF?
+A: TF-IDF (Term Frequency-Inverse Document Frequency) weighs words by how often they appear in a document (TF) vs. how rare they are across all documents (IDF), used to represent text numerically.
+
+Q3: Define Term Frequency (TF).
+A: TF = (Number of times a word appears in a document) / (Total words in document). It measures how frequently a term occurs.
+
+Q4: Define Inverse Document Frequency (IDF).
+A: IDF = log(Total documents / Number of documents containing the word). It penalizes common words across all documents, giving rare words higher weight.
+
+Q5: What is Cosine Similarity?
+A: Cosine similarity measures the cosine of the angle between two vectors (TF-IDF vectors). A value of 1 means identical, 0 means no similarity.
+
+Q6: What is the formula for Cosine Similarity?
+A: Cosine Similarity = (A . B) / (||A|| * ||B||), where A and B are document vectors.
+
+Q7: What is Jaccard Similarity?
+A: Jaccard Similarity = | Intersection of sets | / | Union of sets |. It measures similarity based on the overlap of word sets in two documents.
+
+Q8: Difference between Cosine and Jaccard Similarity?
+A: Cosine similarity considers word frequency and direction of vectors; Jaccard only considers presence/absence of words. Cosine is better for long documents.
+
+Q9: What is BERT?
+A: BERT (Bidirectional Encoder Representations from Transformers) is a pre-trained deep learning model by Google that understands context by reading text in both directions.
+
+Q10: Why is BERT better for semantic similarity than TF-IDF?
+A: BERT captures deep semantic meaning and context, while TF-IDF only considers word frequency. E.g., BERT knows 'king' and 'monarch' are similar.
+
+Q11: What is lexical similarity?
+A: Lexical similarity compares text based on exact word matches or character patterns. E.g., 'cat' and 'cats' are lexically similar.
+
+Q12: What is semantic similarity?
+A: Semantic similarity measures meaning-level similarity. E.g., 'car' and 'automobile' are semantically similar but not lexically.
+
+Q13: Difference between lexical and semantic approach to text similarity?
+A: Lexical compares exact words/characters (surface level); semantic compares meanings using models like BERT or word embeddings (deep level).
+
+Q14: What library is used for TF-IDF in Python?
+A: Scikit-learn's TfidfVectorizer is commonly used to compute TF-IDF representations of text.
+
+Q15: How does TF-IDF vectorize text?
+A: It converts each document into a numerical vector where each dimension corresponds to a word's TF-IDF score. These vectors are then used for similarity computation.
+
+Q16: What is a document-term matrix?
+A: A matrix where rows are documents and columns are terms. Each cell contains the TF-IDF (or frequency) value of the term in that document.
+
+Q17: What is a transformer model?
+A: A transformer is a deep learning architecture using self-attention mechanisms to process entire sequences simultaneously, enabling models like BERT to understand context.
+
+Q18: What are sentence embeddings?
+A: Sentence embeddings are dense vector representations of sentences generated by models like BERT, capturing semantic meaning for similarity tasks.
+
+Q19: What is the range of Jaccard Similarity?
+A: Jaccard similarity ranges from 0 (no overlap) to 1 (identical sets).
+
+Q20: Name practical applications of text similarity.
+A: Plagiarism detection, duplicate question detection (StackOverflow/Quora), document clustering, information retrieval, recommendation systems.
+
+
+--------------------------------------------------------------------------------
+LAB 4: Sentiment Analysis & Tagging of Social Media Text
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+Sentiment analysis (opinion mining) extracts emotional tone from text (positive/negative/neutral). Social media text is ideal due to its vast, real-time user-generated content. Approaches: lexicon-based (VADER) and ML-based. Applications include brand monitoring, customer feedback analysis, political tracking. Challenges include sarcasm, slang, and abbreviations.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is Sentiment Analysis?
+A: Sentiment Analysis (opinion mining) is an NLP technique to determine whether text expresses a positive, negative, or neutral sentiment/emotion.
+
+Q2: What is Social Media Text Tagging?
+A: Tagging assigns labels (e.g., sentiment, topic, entity) to social media text to categorize and organize content for further analysis.
+
+Q3: Why is sentiment analysis important?
+A: It helps businesses monitor brand reputation, understand customer feedback, track public opinion, and make data-driven marketing decisions.
+
+Q4: What are the types of sentiment analysis?
+A: 1. Document-level (overall sentiment), 2. Sentence-level, 3. Aspect-level (sentiment towards specific features), 4. Fine-grained (very positive to very negative).
+
+Q5: What are applications of sentiment analysis?
+A: Customer service, brand monitoring, product review analysis, political opinion tracking, financial market prediction, and public health monitoring.
+
+Q6: What is opinion mining?
+A: Opinion mining is another term for sentiment analysis - it extracts subjective information (opinions, emotions, attitudes) from text.
+
+Q7: What makes social media ideal for sentiment analysis?
+A: Social media generates vast, real-time user opinions in text form, making it a rich source for gauging public sentiment on any topic.
+
+Q8: What is social listening?
+A: Social listening is the process of monitoring social media platforms for mentions of a brand, product, or topic to understand public sentiment.
+
+Q9: What challenges exist in social media sentiment analysis?
+A: Slang, abbreviations, sarcasm, emojis, misspellings, code-switching (mixing languages), and informal grammar make analysis challenging.
+
+Q10: What is aspect-level sentiment analysis?
+A: It identifies sentiment towards specific aspects of a product/service. E.g., 'Battery is good but display is poor' -> positive for battery, negative for display.
+
+Q11: What is the difference between subjectivity and sentiment?
+A: Subjectivity measures whether text is an opinion (vs. fact); sentiment measures the polarity (positive/negative/neutral) of that opinion.
+
+Q12: How does sentiment analysis handle sarcasm?
+A: Sarcasm detection is a major challenge. Deep learning models using context and tone can detect sarcasm better than simple lexicon-based approaches.
+
+Q13: What is the role of NLP in sentiment analysis?
+A: NLP provides tools for tokenization, POS tagging, and parsing that help extract meaningful features from text for sentiment classification.
+
+Q14: What is a sentiment lexicon?
+A: A sentiment lexicon is a dictionary mapping words to sentiment scores. E.g., 'excellent' -> +5, 'terrible' -> -5. Used in lexicon-based sentiment analysis.
+
+Q15: What is VADER in NLP?
+A: VADER (Valence Aware Dictionary and sEntiment Reasoner) is a rule-based sentiment analysis tool optimized for social media text.
+
+Q16: How are tweets preprocessed for sentiment analysis?
+A: Removing @mentions, hashtags (#), retweet markers (RT), URLs, and special characters, followed by standard NLP preprocessing.
+
+Q17: What is polarity in sentiment analysis?
+A: Polarity indicates the orientation of sentiment: positive (>0), negative (<0), or neutral (=0). TextBlob returns polarity as a float between -1 and 1.
+
+Q18: Name machine learning approaches to sentiment analysis.
+A: Naive Bayes, SVM, Logistic Regression, LSTM, and BERT-based classifiers are commonly used for ML-based sentiment analysis.
+
+Q19: What is the difference between rule-based and ML-based sentiment analysis?
+A: Rule-based uses predefined sentiment dictionaries/rules; ML-based learns patterns from labeled training data and generalizes to new text.
+
+Q20: What is brand reputation monitoring using sentiment analysis?
+A: It involves automatically tracking and analyzing public social media posts about a brand to assess whether the overall perception is positive, negative, or neutral.
+
+
+--------------------------------------------------------------------------------
+LAB 5: Sentiment Analysis of Twitter (X) Data
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+This lab applies sentiment analysis to real-time Twitter data using Tweepy (Twitter API), TextBlob (polarity scoring), and Matplotlib (visualization). Tweets are fetched, cleaned (remove @mentions, hashtags, URLs), analyzed for polarity (-1 to +1), and classified as Positive/Negative/Neutral. Results are visualized with bar charts.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is Tweepy?
+A: Tweepy is a Python library that provides easy access to the Twitter API, allowing developers to fetch tweets, user info, timelines, and more.
+
+Q2: What is the Twitter API used for in sentiment analysis?
+A: The Twitter API is used to programmatically collect real-time or historical tweets based on keywords, hashtags, or users for analysis.
+
+Q3: What is TextBlob?
+A: TextBlob is a Python NLP library that provides a simple API for text processing tasks including sentiment analysis, POS tagging, and translation.
+
+Q4: What is polarity in TextBlob?
+A: Polarity in TextBlob is a float value between -1.0 (very negative) and +1.0 (very positive), representing the sentiment of the text.
+
+Q5: What is subjectivity in TextBlob?
+A: Subjectivity is a float between 0.0 (very objective/factual) and 1.0 (very subjective/opinion-based).
+
+Q6: How do you authenticate the Twitter API in Python?
+A: Using OAuth1 via tweepy.OAuthHandler with consumer_key, consumer_secret, access_token, and access_token_secret provided by a Twitter Developer account.
+
+Q7: Why is preprocessing important before sentiment analysis?
+A: Tweets contain noise (@mentions, hashtags, URLs, RT markers) that can skew results. Cleaning ensures only meaningful text is analyzed.
+
+Q8: What regex patterns are used to clean tweets?
+A: @[A-Za-z0-9]+ removes mentions, #\w+ removes hashtags, RT[\s]+ removes retweets, https?:\/\/\S+ removes URLs.
+
+Q9: What is the difference between supervised and unsupervised sentiment analysis?
+A: Supervised uses labeled training data (e.g., positive/negative reviews) to train classifiers. Unsupervised uses lexicons or rules without labeled data.
+
+Q10: What libraries are needed for this practical?
+A: Tweepy (Twitter API), Pandas (data handling), NumPy (numerical ops), TextBlob/NLTK/VADER (sentiment), Matplotlib/Seaborn (visualization).
+
+Q11: How are tweets classified into sentiments using TextBlob?
+A: polarity > 0 -> Positive, polarity == 0 -> Neutral, polarity < 0 -> Negative.
+
+Q12: What is a Cursor in Tweepy?
+A: tweepy.Cursor handles pagination automatically, allowing you to iterate through large result sets (e.g., many tweets) easily.
+
+Q13: What is the lang parameter in Twitter API search?
+A: The lang parameter filters tweets by language code. E.g., lang='en' returns only English tweets.
+
+Q14: What is a bar chart in sentiment visualization?
+A: A bar chart showing counts of Positive, Negative, and Neutral tweets, helping visualize the overall sentiment distribution of a dataset.
+
+Q15: What are advantages of using Twitter for sentiment analysis?
+A: Real-time data, large volume, diverse opinions, public availability, and global coverage make Twitter ideal for sentiment research.
+
+Q16: What are limitations of TextBlob sentiment analysis?
+A: Cannot detect sarcasm, limited language support, relies on lexicons so misses context, and is not trained on domain-specific data.
+
+Q17: What is tweet_mode='extended' in Tweepy?
+A: It fetches the full text of tweets longer than 140 characters (up to 280 characters), avoiding truncation.
+
+Q18: How do you visualize sentiment distribution?
+A: Using df['Sentiment'].value_counts().plot(kind='bar') with Matplotlib to create a bar chart showing distribution across sentiment categories.
+
+Q19: What is OAuth in Twitter API?
+A: OAuth (Open Authorization) is an authentication protocol that allows Tweepy to access Twitter on behalf of a developer account without sharing passwords.
+
+Q20: What is the application of sentiment analysis in political analysis?
+A: It tracks public opinion about politicians, policies, and elections by analyzing social media posts, helping predict trends and gauge voter sentiment.
+
+
+--------------------------------------------------------------------------------
+LAB 7: Link Analysis - PageRank Algorithm
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+Link analysis evaluates importance of nodes (web pages) based on their link structure. PageRank (Google) assigns ranks using incoming links with a damping factor of 0.85. HITS algorithm computes Hub and Authority scores. Implemented using Python's NetworkX. Key concepts: in-degree, out-degree, directed graph, convergence, random surfer model.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is Link Analysis?
+A: Link Analysis is a data analysis technique used to evaluate relationships (links) between nodes such as web pages. It is widely used in search engines to rank pages.
+
+Q2: What is PageRank?
+A: PageRank is an algorithm developed by Google that assigns an importance score to web pages based on the number and quality of incoming links.
+
+Q3: Who developed PageRank?
+A: PageRank was developed by Larry Page and Sergey Brin at Google (Stanford University) in 1998.
+
+Q4: What is a damping factor in PageRank?
+A: The damping factor (usually 0.85) represents the probability that a user continues clicking links vs. stopping. It prevents rank sinks and ensures convergence.
+
+Q5: What is the formula for PageRank?
+A: PR(A) = (1-d) + d * Sum(PR(T)/C(T)), where d is damping factor, T are pages linking to A, and C(T) is the number of outbound links from T.
+
+Q6: What is the difference between in-degree and out-degree?
+A: In-degree = number of links pointing TO a node; Out-degree = number of links going FROM a node. In PageRank, high in-degree means higher importance.
+
+Q7: What is the HITS Algorithm?
+A: HITS (Hyperlink-Induced Topic Search) assigns two scores: Hub (links to many authorities) and Authority (linked by many hubs). Both are computed iteratively.
+
+Q8: Difference between PageRank and HITS?
+A: PageRank is query-independent and computed globally; HITS is query-dependent and computed per search query. PageRank is used by Google.
+
+Q9: What is a directed graph in link analysis?
+A: A directed graph has edges with direction (A -> B means A links to B but not necessarily B to A). Web link structure is naturally a directed graph.
+
+Q10: What is NetworkX?
+A: NetworkX is a Python library for creating, manipulating, and analyzing complex networks and graphs. It provides built-in algorithms like PageRank.
+
+Q11: How do you compute PageRank using NetworkX?
+A: nx.pagerank(G, alpha=0.85) where G is a directed graph and alpha is the damping factor. Returns a dictionary of {node: rank} pairs.
+
+Q12: What does alpha = 0.85 mean in nx.pagerank()?
+A: alpha is the damping factor. 0.85 means there's an 85% chance a random surfer follows a link and 15% chance of jumping to a random page.
+
+Q13: What is a random surfer model?
+A: The random surfer model imagines a user randomly clicking links on web pages. PageRank estimates the probability that this surfer is on any given page.
+
+Q14: What is convergence in PageRank?
+A: Convergence occurs when PageRank values stop changing significantly between iterations. The algorithm repeats until this stable state is reached.
+
+Q15: What is a sink node in PageRank?
+A: A sink node has no outgoing links. It absorbs rank without distributing it, causing the algorithm to lose probability mass, handled by the damping factor.
+
+Q16: What are applications of Link Analysis?
+A: Search engine ranking (Google), social network analysis, citation analysis in academic papers, fraud detection, and web mining.
+
+Q17: What is a hub in HITS algorithm?
+A: A hub is a page that links to many high-quality authority pages. High hub score = good directory/index page.
+
+Q18: What is an authority in HITS algorithm?
+A: An authority is a page that is linked to by many hub pages. High authority score = page with valuable, trustworthy content.
+
+Q19: Limitations of PageRank?
+A: Susceptible to link spam, doesn't consider content quality, requires iterative computation, and treats all links equally regardless of context.
+
+Q20: How does PageRank improve search results?
+A: By ranking pages based on endorsements (backlinks), PageRank ensures more trusted/referenced pages appear higher in search results.
+
+
+--------------------------------------------------------------------------------
+LAB 8: Social Network Analysis Through Visualization
+--------------------------------------------------------------------------------
+
+THEORY OVERVIEW
+Social Network Analysis (SNA) studies relationships as graphs. Nodes = users, Edges = connections. Key metrics: Degree Centrality (direct connections), Betweenness Centrality (bridge nodes), Closeness Centrality (information spread), Clustering Coefficient. NetworkX + Matplotlib visualizes networks. Applications: influencer detection, community analysis, fraud detection.
+
+20 VIVA QUESTIONS & ANSWERS
+
+Q1: What is Social Network Analysis (SNA)?
+A: SNA is a method to study relationships and interactions between individuals, groups, or organizations, represented as a graph of nodes (users) and edges (connections).
+
+Q2: What is a node in SNA?
+A: A node represents an entity in the network - such as a user, page, or organization in a social media network.
+
+Q3: What is an edge in SNA?
+A: An edge represents a relationship or interaction between two nodes, such as a follow, like, mention, or friendship.
+
+Q4: What is Degree Centrality?
+A: Degree centrality = number of connections a node has / (n-1). It measures how connected a node is; high degree means many direct connections.
+
+Q5: What is Betweenness Centrality?
+A: Betweenness centrality measures how often a node lies on the shortest path between two other nodes. High value means the node is a key connector/broker.
+
+Q6: What is Closeness Centrality?
+A: Closeness centrality measures how close a node is to all other nodes. High closeness = node can spread information quickly to the entire network.
+
+Q7: What is a Clustering Coefficient?
+A: The clustering coefficient measures how tightly nodes cluster together - i.e., how many of a node's neighbors are also connected to each other.
+
+Q8: Why is visualization important in SNA?
+A: Visualization makes complex relationships visible, helps identify clusters/communities, detect influencers, and understand communication patterns at a glance.
+
+Q9: How do you create a graph from a DataFrame using NetworkX?
+A: nx.from_pandas_edgelist(df, 'Source', 'Target', create_using=nx.DiGraph()) creates a directed graph from source-target column pairs in a DataFrame.
+
+Q10: What is nx.DiGraph() vs nx.Graph()?
+A: DiGraph() creates a directed graph (edges have direction like A -> B). Graph() creates an undirected graph (A-B is mutual). Social follows are directed.
+
+Q11: How do you compute degree centrality in NetworkX?
+A: nx.degree_centrality(G) returns a dictionary of {node: centrality_value} for all nodes.
+
+Q12: How do you compute betweenness centrality?
+A: nx.betweenness_centrality(G) returns betweenness centrality scores for all nodes.
+
+Q13: What is community detection?
+A: Community detection identifies groups of nodes that are more densely connected to each other than to the rest of the network.
+
+Q14: What is an influencer in SNA?
+A: An influencer is a node with high centrality (degree, betweenness, or eigenvector), meaning they can significantly affect information flow in the network.
+
+Q15: What does with_labels=True do in nx.draw()?
+A: It displays node labels (names) on the graph visualization.
+
+Q16: What is Eigenvector Centrality?
+A: Eigenvector centrality measures a node's influence based on the centrality of its neighbors - being connected to influential nodes increases your own score.
+
+Q17: How is SNA used in fraud detection?
+A: By analyzing transaction networks, SNA identifies clusters of suspicious activity or unusual connections between accounts indicating fraudulent behavior.
+
+Q18: What is the difference between directed and undirected social networks?
+A: Directed: relationships have direction (e.g., Twitter follows; A follows B doesn't mean B follows A). Undirected: mutual relationships (e.g., Facebook friends).
+
+Q19: What are limitations of SNA?
+A: Very large networks become computationally expensive, visualizations get cluttered, data collection requires preprocessing, and privacy concerns exist.
+
+Q20: What are applications of Social Network Analysis?
+A: Influencer marketing, community detection, epidemic spread modeling, recommendation systems, fraud detection, and organizational communication analysis.
+
+
+--------------------------------------------------------------------------------
+QUICK REVISION CHEAT SHEET
+--------------------------------------------------------------------------------
+
+Tokenization: Splitting text into words or sentences
+Stemming: Chop suffixes to get root (may be non-word) e.g., PorterStemmer
+Lemmatization: Get valid dictionary base form using WordNet; linguistically accurate
+TF-IDF: Weighs words by frequency in doc x rarity across corpus
+Cosine Similarity: Measures angle between two document vectors (0=diff, 1=same)
+Jaccard Similarity: Set overlap: Intersection/Union of word sets
+BERT: Deep learning transformer that captures semantic meaning bidirectionally
+Sentiment Analysis: Classifying text as Positive, Negative, or Neutral
+VADER: Rule-based sentiment tool optimized for social media
+TextBlob Polarity: Float from -1.0 (negative) to +1.0 (positive)
+Tweepy: Python library to access Twitter (X) API
+PageRank: Google's algorithm: rank pages by incoming link quality
+Damping Factor: 0.85 probability of following link vs. random jump
+HITS: Hub-Authority algorithm for query-dependent page ranking
+Degree Centrality: Number of direct connections a node has
+Betweenness Centrality: How often a node is on shortest path between others
+NetworkX: Python library for graph creation and network analysis
+SNA: Social Network Analysis - studying entities and relationships as graphs
+In-degree: Number of links pointing TO a node
+Out-degree: Number of links going FROM a node
